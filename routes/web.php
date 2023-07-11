@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MyProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -69,4 +70,19 @@ Route::get("/student/inheritance", function () {
     return view("student-inheritance");
 });
 
+
+Route::get('/tables', function () {
+    return view('tables');
+});
+
+// เริ่มวันนี้ 
+Route::get("/myprofile/create",[ MyProfileController::class , "create" ]);
+Route::get("/myprofile/{id}/edit", [ MyProfileController::class , "edit" ] );
+Route::get("/myprofile/{id}", [ MyProfileController::class , "show" ]);
+Route::get( "/coronavirus" ,[ MyProfileController::class , "coronavirus" ] );
+
+// การบ้านวันที่ 11/7/66
+Route::get( "/newgallery" , [ MyProfileController::class , "gallery" ] );
+Route::get( "/newgallery/ant" , [ MyProfileController::class , "ant" ] );
+Route::get( "/newgallery/bird" , [ MyProfileController::class , "bird" ] );
 
