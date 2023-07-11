@@ -68,3 +68,5 @@ Route::get("/teacher/inheritance", function () {
 Route::get("/student/inheritance", function () {
     return view("student-inheritance");
 });
+
+
